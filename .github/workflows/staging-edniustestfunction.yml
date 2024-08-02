@@ -1,4 +1,4 @@
-name: Deploy Python project to Azure Function App (Production)
+name: Deploy Python project to Azure Function App (Staging)
 
 on:
   push:
@@ -55,7 +55,7 @@ jobs:
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         with:
-          app-name: 'ednius-test-function/staging'
+          app-name: 'ednius-test-function'
           slot-name: 'staging'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_STAGING }}
